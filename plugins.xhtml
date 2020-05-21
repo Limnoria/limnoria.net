@@ -1,0 +1,363 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>Limnoria - a Python IRC bot</title>
+        <link rel="stylesheet" href="./style.css" type="text/css" />
+    </head>
+
+    <body>
+        <h1>Limnoria plugins</h1>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+
+            This page shows a non-exhaustive of Limnoria plugins, either built-in
+            or from third-party developpers; that should provide most features
+            you ever dreamed of.
+            If there is one missing, feel free to ask us on at 
+            <a href="ircs://chat.freenode.net:6697/#limnoria">#limnoria on freenode</a>.
+
+            When a plugin is loaded, you can explore its features via IRC with the following commands:
+
+            <dl class="commands">
+                <dt>@list</dt>
+                <dd>Lists all plugins loaded in the bot</dd>
+
+                <dt>@list &lt;Plugin&gt;</dt>
+                <dd>Lists all commands available in the given Plugin</dd>
+
+                <dt>@help &lt;command&gt;</dt>
+                <dd>Shows how to use a command and what it does</dd>
+
+                <dt>@config list supybot.plugins.&lt;Plugin&gt;</dt>
+                <dd>
+                    Lists configuration variables provided by the Plugin.
+                    See the <a href="https://docs.limnoria.net/use/configuration.html">configuration system</a>
+                    documentation for details on how to get more information on configuration variables.
+                </dd>
+            </dl>
+        </section>
+
+        <section id="messaging">
+            <h2>Messaging</h2>
+
+            <dl>
+                <dt>Later</dt>
+                <dd>
+                    Allows anyone to send a message to someone while they are offline.
+                    The bot will send them the message when they are back online.
+                </dd>
+
+                <dt>Note</dt>
+                <dd>
+                    Similar to Later, but with some authentication. It allows any user to send
+                    messages to other users, as long as they are registered to the bot.
+                </dd>
+
+                <dt>Relay, LinkRelay</dt>
+                <dd>
+                    Relay messages across multiple channel/networks. Useful if your community
+                    is split between different networks, but you want everyone to communicate
+                    with each other.
+
+                    <br/>
+
+                    LinkRelay is a third-party plugin, you can get it with the command:
+                    <code>plugindownloader install ProgVal LinkRelay</code>
+                </dd>
+
+                <dt>SedRegex</dt>
+                <dd>
+                    Allows you to "fix" a typo or mistake in a previous message. For example, if
+                    you wrote "I love pipes" and realize your mistake, you can write
+                    "s/pipes/pies/" and the bot will reply "X meant to say: I love pies".
+                </dd>
+            </dl>
+        </section>
+
+        <section id="factoids">
+            <h2>Factoids and quotes</h2>
+
+            <dl>
+                <dt>Factoids and MoobotFactoids</dt>
+                <dd>
+                    Classic IRC factoids: allow users to "teach" the bot information about
+                    a word, and recall it later.
+                    Very useful on help channels to provide links to new users and answer
+                    Frequently Asked Questions.
+
+                    Factoids and MoobotFactoids provide the same function but with a different
+                    flavor in their interface.
+                </dd>
+
+                <dt>Quote</dt>
+                <dd>
+                    Allows users to register arbitrary quotes, and recall them later.
+                </dd>
+
+                <dt>QuoteGrabs</dt>
+                <dd>
+                    Similar to Quotes, but only allows quoting something a user said recently
+                    in the same channel.
+                </dd>
+            </dl>
+        </section>
+
+        <section id="internet-utilities">
+            <h2>Internet utilities</h2>
+
+            <dt>DDG and Google</dt>
+            <dd>
+                Provide searches using <a href="https://duckduckgo.com/">Duckduckgo</a>
+                and <a href="https://www.google.com/">Google</a> respectively.
+            </dd>
+
+            <dt>Fediverse</dt>
+            <dd>
+                Experimental plugin that fetches information from the Fediverse, ie. websites that
+                support ActivityPub, such as <a href="https://joinmastodon.org/">Mastodon</a>,
+                <a href="https://joinpeertube.org/">PeerTube</a>, or
+                <a href="https://pleroma.social/">Pleroma</a>.
+            </dd>
+
+            <dt>Internet, Web</dt>
+            <dd>
+                Provide commands to get some information about web pages and domains/DNS.
+                Web can be configured to automatically print the title of all links shared in a channel.
+            </dd>
+
+            <dt>Spiffytitles</dt>
+            <dd>
+                Improved version of Web's title announcement for some websites:
+                <a href="https://youtube.com" rel="nofollow">Youtube</a>,
+                <a href="https://imgur.com" rel="nofollow">Imgur</a>,
+                <a href="https://imdb.com" rel="nofollow">IMDB</a>,
+                <a href="https://reddit.com/" rel="nofollow">Reddit</a>,
+                <a href="https://twitch.tv" rel="nofollow">Twitch</a>,
+                <a href="https://vimeo.com" rel="nofollow">Vimeo</a>,
+                <a href="https://dailymotion.com" rel="nofollow">DailyMotion</a>, and
+                <a href="https://coub.com" rel="nofollow">Coub</a>
+            </dd>
+
+            <dt>ShrinkUrl</dt>
+            <dd>
+                Provides access to URL-shortening services: shortens URLs the bot would send
+                on a channel, and optionally URLs sent by other users.
+            </dd>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+
+            <dl>
+                <dt>RSS</dt>
+                <dd>
+                    Provides access to RSS feeds, and announces them automatically on channels.
+                </dd>
+
+                <dt>GitHub</dt>
+                <dd>
+                    Announces events on a GitHub repository.
+                    This is a third-party plugin, you must install it with the command:
+                    <code>plugindownloader install ProgVal GitHub</code>
+                </dd>
+            </dl>
+        </section>
+
+        <section id="nested-commands">
+            <h2>Creating custom commands</h2>
+
+            <p>
+                Limnoria allows you to create custom commands, that may call other commands themselves
+                (aka. nested commands).
+                This allows you powerful customization of your bot, without writing a single line
+                of code.
+            </p>
+            <p>
+                This may remind you of shell scripting, but with <code>[subcommand arg1 arg2]</code>
+                instead of <code>$(subcommand arg1 arg2)</code>.
+            </p>
+            <p>
+                The following plugins provide handy commands to create your own custom commands.
+            </p>
+
+            <dl>
+                <dt>Aka, Alias</dt>
+                <dd>
+                    Allows you to create a command with a name, that users can call like any other command.
+                    (Alias is the ancestor of Aka, and is only kept for backward compatibility,
+                    you usually won't use it anymore.)
+                </dd>
+
+                <dt>Conditional</dt>
+                <dd>
+                    Provides commands that call other commands conditionally. For example, this allows
+                    you to run a command only if a target user is in the channel.
+                </dd>
+
+                <dt>MessageParser</dt>
+                <dd>
+                    Allows you to configure triggers (regular expressions), that will automatically
+                    run a command when a user says something (a word, a message full of upper-case
+                    letters, numbers, ...).
+                </dd>
+
+                <dt>Filter, Format, String, Utilities</dt>
+                <dd>
+                    Provide various utility commands, check them out with <code>@list Utilities</code>.
+                </dd>
+
+                <dt>Scheduler</dt>
+                <dd>
+                    Allows you to run a command some time in the future; or at a recurring interval.
+                </dd>
+            </dl>
+        </section>
+
+        <section id="bot-management">
+            <h2>Bot management</h2>
+
+            <dl>
+                <dt>Admin</dt>
+                <dd>
+                    Provides commands for bot administrators; mostly
+                    <a href="https://docs.limnoria.net/use/capabilities.html">permission management</a>
+                    and joining/leaving channels.
+                </dd>
+
+                <dt>Config</dt>
+                <dd>
+                    Provides all the commands to configure the bot, see the documentation of the
+                    <a href="https://docs.limnoria.net/use/configuration.html">configuration system</a>.
+                </dd>
+
+                <dt>Owner</dt>
+                <dd>
+                    Provids commands for the bot owner: renaming commands, stopping the bot,
+                    granting capabilities globally to users.
+                </dd>
+
+                <dt>Network</dt>
+                <dd>
+                    Provides commands to connect and disconnect to IRC networks,
+                    send whois queries, get latency, and network statistics.
+                </dd>
+
+                <dt>PluginDownloader</dt>
+                <dd>
+                    Allows you to download and install third-party plugins from IRC --
+                    without touching the shell
+                </dd>
+
+                <dt>Services</dt>
+                <dd>
+                    Authenticates the bot to network services (eg. NickServ). Nowadays, this is
+                    usually not needed anymore, as most network support standard IRC authentication (SASL).
+                </dd>
+            </dl>
+        </section>
+
+        <section id="channel-management">
+            <h2>Channel management</h2>
+
+            <dl>
+                <dt>AutoMode</dt>
+                <dd>
+                    Allows you to automatically make users op (+o) or voice (+v) when they join,
+                    or ban them (+b).
+                </dd>
+
+                <dt>BadWords</dt>
+                <dd>
+                    Prevents the bot from saying some words, and/or to kick users who use them.
+                </dd>
+
+                <dt>Channel</dt>
+                <dd>
+                    Generic commands to manage a channel: adding capabilities to users within a channel,
+                    ignoring users, opping/voicing, making the bot silent.
+                </dd>
+
+                <dt>ChannelLogger</dt>
+                <dd>Writes channel logs on disk</dd>
+
+                <dt>Protector</dt>
+                <dd>
+                    Automatically restores op status of users supposed to be op, if they happen
+                    to be deopped by someone.
+                </dd>
+
+                <dt>Topic</dt>
+                <dd>
+                    Allows users to add and remove sections to the topic. Handy if you don't
+                    want to rewrite the whole topic every time.
+                </dd>
+            </dl>
+        </section>
+
+        <section id="user-management">
+            <h2>User management</h2>
+
+            <dl>
+                <dt>GPG</dt>
+                <dd>
+                    Allows users to authenticate to their account without a password,
+                    using their GnuPG key.
+                </dd>
+
+                <dt>NickAuth</dt>
+                <dd>
+                    Allows users to authenticate to their account without a password,
+                    using their existing account with network services. (This only works
+                    on networks that provide this kind of service, usually called
+                    NickServ.)
+                </dd> 
+
+                <dt>User</dt>
+                <dd>
+                    Provides commands for users to manage their own accounts: registration,
+                    login, adding a hostmask to their account (to be recognized automatically).
+                </dd>
+            </dl>
+        </section>
+
+        <section id="more">
+            <h2>And more!</h2>
+
+            Other built-in plugins not mentioned above are:
+
+            <ul>
+                <li>Anonymous</li>
+                <li>ChannelStats</li>
+                <li>Ctcp</li>
+                <li>Debug</li>
+                <li>Dict</li>
+                <li>Dunno</li>
+                <li>Games</li>
+                <li>Hashes</li>
+                <li>Herald</li>
+                <li>Karma</li>
+                <li>Lart</li>
+                <li>Limiter</li>
+                <li>Math</li>
+                <li>Misc</li>
+                <li>News</li>
+                <li>NickCapture</li>
+                <li>Nickometer</li>
+                <li>Plugin</li>
+                <li>Praise</li>
+                <li>Relay</li>
+                <li>Reply</li>
+                <li>Seen</li>
+                <li>Status</li>
+                <li>Success</li>
+                <li>Time</li>
+                <li>Todo</li>
+                <li>Unix</li>
+                <li>URL</li>
+            </ul>
+
+            and there are dozens more of third-party plugins on the web.
+        </section>
+
+    </body>
+</html>

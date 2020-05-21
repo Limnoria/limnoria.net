@@ -1,0 +1,14 @@
+body {
+    max-width: 40em;
+    text-align: justify;
+    margin: auto;
+}
+
+dl.commands dt {
+    font-family: monospace;
+}
+
+dd {
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
+}
