@@ -16,10 +16,37 @@
             you ever dreamed of.
             If there is one missing, feel free to ask us on at 
             <a href="ircs://chat.freenode.net:6697/#limnoria">#limnoria on freenode</a>.
+            <br/>
+            If you come across a third-party plugin in the wild which is updated and
+            compatible with the version of Limnoria that you are using, you can try it out by doing
+            the following:
+            <ol>
+                <li>
+                    Navigate to the plugins directory residing within the directory containing the bot related files
+                    <code>cd bot/plugins/</code>
+                </li>
+                <li>
+                    <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">Clone the repository</a>: 
+                    <code>git clone &lt;RepoHttpsUrl&gt;</code>
+                </li>
+                <li>
+                    The README may not have documention on how to install dependencies which can be found in: <code>&lt;Plugin&gt;/requirements.txt</code>
+                    This can be solved with the help of:
+                    <code>cd &lt;Plugin&gt;/</code> and
+                    <code>pip3 install -r requirements.txt</code>
+                </li>
+                <li>
+                    Load the plugin as shown below.
+                </li>
+            </ol>
+             
 
             When a plugin is loaded, you can explore its features via IRC with the following commands:
 
             <dl class="commands">
+                <dt>@load &lt;Plugin&gt;</dt>
+                <dd>Loads the Plugin</dd>
+
                 <dt>@list</dt>
                 <dd>Lists all plugins loaded in the bot</dd>
 
