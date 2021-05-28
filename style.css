@@ -1,3 +1,10 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        filter: invert(1) hue-rotate(180deg)
+    }
+}
+
 body {
     max-width: 60em;
     text-align: justify;
