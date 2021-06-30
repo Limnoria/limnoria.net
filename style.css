@@ -1,7 +1,10 @@
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
-        filter: invert(1) hue-rotate(180deg)
+        background-color: #121212;
+        color: rgba(255, 255, 255, 0.87);
+    }
+    a {
+        filter: invert(0.85) hue-rotate(180deg);
     }
 }
 
