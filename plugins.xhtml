@@ -63,8 +63,8 @@
                     <br/>
 
                     LinkRelay and RelayNext are third-party plugins, you can get them with the commands:
-                    <code>plugindownloader install ProgVal LinkRelay</code> and
-                    <code>plugindownloader install jlu5 RelayNext</code>
+                    <code>pip3 install 'git+https://github.com/progval/Supybot-plugins.git#subdirectory=LinkRelay'</code> and
+                    <code>pip3 install 'git+https://github.com/jlu5/SupyPlugins.git#subdirectory=RelayNext'</code>
                 </dd>
 
                 <dt>SedRegex</dt>
@@ -139,7 +139,7 @@
                 <a href="https://dailymotion.com" rel="nofollow">DailyMotion</a>, and
                 <a href="https://coub.com" rel="nofollow">Coub</a>.
                 This is a third-party plugin, you must install it with the command:
-                <code>plugindownloader install oddluck SpiffyTitles</code>
+                <code>pip3 install 'git+https://github.com/oddluck/limnoria-plugins.git#subdirectory=SpiffyTitles'</code>
             </dd>
 
             <dt>ShrinkUrl</dt>
@@ -162,7 +162,7 @@
                 Runs advanced computation and equation solving using
                 <a href="https://www.wolframalpha.com/">wolframalpha.com</a>.
                 This is a third-party plugin, you must install it with the command:
-                <code>plugindownloader install oddluck WolframAlpha</code>
+                <code>pip3 install 'git+https://github.com/oddluck/limnoria-plugins.git#subdirectory=WolframAlpha'</code>
             </dd>
         </section>
 
@@ -175,27 +175,49 @@
                     Provides access to RSS feeds, and announces them automatically on channels.
                 </dd>
 
+                <dt><a href="https://github.com/jlu5/SupyPlugins/tree/master/NuWeather">NuWeather</a></dt>
+                <dd>
+                    Provides commands to display the current weather and forecasts.
+                    This is a third-party plugin, you must install it with the command:
+                    <code>pip3 install 'git+https://github.com/jlu5/SupyPlugins.git#subdirectory=NuWeather'</code>
+                </dd>
+            </dl>
+        </section>
+
+        <section id="forges">
+            <h2>Development Forges</h2>
+
+            <p>
+                <dt><a href="https://github.com/bugzilla/limnoria-bugzilla">Bugzilla</a></dt>
+                <dd>
+                    Queries Bugzilla installations, shows details about bugs, and announces bugmails sent from Bugzilla.
+                    This is a third-party plugin, you must install it with the command:
+                    <code>pip3 install 'git+https://github.com/bugzilla/limnoria-bugzilla.git'</code>
+                </dd>
+
                 <dt><a href="https://github.com/ProgVal/Supybot-plugins/tree/master/GitHub">GitHub</a></dt>
                 <dd>
                     Announces events from GitHub repositories.
                     This is a third-party plugin, you must install it with the command:
-                    <code>plugindownloader install ProgVal GitHub</code>
+                    <code>pip3 install 'git+https://github.com/progval/Supybot-plugins.git#subdirectory=GitHub'</code>
                 </dd>
 
                 <dt><a href="https://github.com/jlu5/SupyPlugins/tree/master/GitLab">GitLab</a></dt>
                 <dd>
                     Announces events from GitLab repositories.
                     This is a third-party plugin, you must install it with the command:
-                    <code>plugindownloader install jlu5 GitLab</code>
+                    <code>pip3 install 'git+https://github.com/jlu5/SupyPlugins.git#subdirectory=GitLab'</code>
                 </dd>
 
-                <dt><a href="https://github.com/jlu5/SupyPlugins/tree/master/NuWeather">NuWeather</a></dt>
+                <dt><a href="https://forge.softwareheritage.org/source/limnoria-plugins/browse/master/Phabricator/">Phabricator</a></dt>
                 <dd>
-                    Provides commands to display the current weather and forecasts.
-                    This is a third-party plugin, you must install it with the command:
-                    <code>plugindownloader install jlu5 NuWeather</code>
+                    Shows details about Differentials and Tasks when mentioned by id.
+                    This is a third-party plugin, you must download it with the command:
+                    <code>git clone https://forge.softwareheritage.org/source/limnoria-plugins.git swh-limnoria-plugins</code>
+                    then add the <code>swh-limnoria-plugins</code> directory to the
+                    <code>supybot.directories.plugins</code> configuration before loading it.
                 </dd>
-            </dl>
+            </p>
         </section>
 
         <section id="nested-commands">
